@@ -1,7 +1,8 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:21-alpine'
+    agent any
+    triggers {
+        cron('* * * * *')
+    }
         }
         parameters {
             string(name: 'NAME', defaultValue: 'M. Jenkins', description: 'qui est-ce ?')
