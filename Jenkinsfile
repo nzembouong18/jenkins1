@@ -28,8 +28,22 @@ pipeline {
                 echo "CHOICE: ${ CHOICE }"
                 echo "PASSWORD: ${ PASSWORD }"
             }
+    
        
           
+    }
+    stage('Deploiement en production') {
+        input{
+            message "Voulez-vous déployer en production ?"
+            ok "Oui, déployons."
+            submitter "admin, devops"
+            parameters {
+                string(name: 'VERSION', defaultValue: 'latest', description: 'quelle version souhaitez-vous deployer ?')
+            }
+        }
+        steps {
+            echo "Déploiement de la ${ VERSION } en production."
+        }
     }
     post {
         always {
