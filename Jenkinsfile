@@ -1,6 +1,6 @@
-pipeline{
-    agent{
-        docker{
+pipeline {
+    agent {
+        docker {
             image 'node:21-alpine'
         }
     }
@@ -12,5 +12,14 @@ pipeline{
             }
        
           
+    }
+    post {
+        always {
+            echo 'always !'
+        }
+        success {
+            echo 'success !'
+
+        }
     }
 }
