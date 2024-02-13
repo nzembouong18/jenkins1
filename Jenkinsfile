@@ -43,14 +43,6 @@ pipeline {
             echo "Déploiement de la ${ VERSION } en production."
         }
     }
-    post {
-        always {
-            echo 'always !'
-        }
-        success {
-            echo 'success !'
-
-        }
-    }
+    
     }
 }
