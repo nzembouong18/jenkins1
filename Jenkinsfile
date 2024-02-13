@@ -21,7 +21,7 @@ pipeline {
                 timestamps()
             }
             steps{
-                sh 'npm -v'
+                sh 'java -version'
                 echo "NAME: ${ NAME }"
                 echo "TEXT: ${ TEXT }"
                 echo "TOGGLE: ${ TOGGLE }"
