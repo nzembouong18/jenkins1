@@ -11,7 +11,7 @@ pipeline {
             choice(name: 'CHOICE', choices:['un', 'deux', 'trois'], description: 'liste')
             password(name: 'PASSWORD', description: 'un mot de pass')
         }
-    }
+    
     options { 
         timeout(time: 1, unit: "HOURS")
     }
