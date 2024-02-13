@@ -3,7 +3,7 @@ pipeline {
     triggers {
         pollSCM('* * * * *')
     }
-        }
+        
         parameters {
             string(name: 'NAME', defaultValue: 'M. Jenkins', description: 'qui est-ce ?')
             text(name: 'TEXT', defaultValue: 'un texte', description: 'une description')
@@ -29,9 +29,7 @@ pipeline {
                 echo "PASSWORD: ${ PASSWORD }"
             }
     
-       
-          
-    }
+       }
     stage('Deploiement en production') {
         input{
             message "Voulez-vous déployer en production ?"
@@ -53,5 +51,6 @@ pipeline {
             echo 'success !'
 
         }
+    }
     }
 }
